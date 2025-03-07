@@ -11,3 +11,7 @@ Peladinha Social Club Platform is an application designed to generate statistics
 - Flutter
 - PostgreSQL
 - Docker
+
+
+<img width="1096" alt="image" src="https://github.com/user-attachments/assets/99be186b-96d2-4e97-9a5c-f73e540f95a4" />
+
