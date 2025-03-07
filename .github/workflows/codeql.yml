@@ -1,0 +1,33 @@
+name: Automated Code Review
+
+on:
+  pull_request:
+    branches: [ "main", "dev" ]  # Runs for PRs to main and dev branches
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    name: Lint code using GitHub's Super Linter
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Super Linter
+        uses: github/super-linter@v4
+        env:
+          RUN_LOCAL: true
+
+  analyze:
+    runs-on: ubuntu-latest
+    name: Analyze code with CodeQL
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up CodeQL
+        uses: github/codeql-action/setup-codeql@v1
+
+      - name: Run CodeQL analysis
+        uses: github/codeql-action/analyze@v1
