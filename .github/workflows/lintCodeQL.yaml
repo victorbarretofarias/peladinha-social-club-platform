@@ -1,0 +1,19 @@
+name: Lint Code Base
+
+on:
+  pull_request:
+    branches: [ "main", "dev" ]  # Run on PRs to main or dev branches
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    name: Lint code using GitHub's Super Linter
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Super-Linter
+        uses: github/super-linter@v4
+        env:
+          RUN_LOCAL: true
